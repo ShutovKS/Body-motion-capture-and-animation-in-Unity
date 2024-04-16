@@ -1,10 +1,13 @@
 # socket_server.py
 import socket
 
+HOST = 'localhost'
+PORT = 50237
+
 
 def start_server(image_handler):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('localhost', 12345))
+    server_socket.bind((HOST, PORT))
     server_socket.listen(1)
     print("Сервер запущен, ожидание подключения...")
 

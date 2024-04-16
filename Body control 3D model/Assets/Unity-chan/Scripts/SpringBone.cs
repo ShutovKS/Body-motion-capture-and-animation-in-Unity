@@ -8,10 +8,10 @@
 //
 //Revised by N.Kobayashi 2014/06/20
 //
-using UnityEngine;
-using System.Collections;
 
-namespace UnityChan
+using UnityEngine;
+
+namespace Unity_chan
 {
 	public class SpringBone : MonoBehaviour
 	{

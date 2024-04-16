@@ -44,7 +44,7 @@ public class TCPServer : MonoBehaviour
         {
             client?.Close();
 
-            client = new TcpClient("localhost", 12345);
+            client = new TcpClient("localhost", 50237);
             stream = client.GetStream();
         }
         catch (Exception ex)

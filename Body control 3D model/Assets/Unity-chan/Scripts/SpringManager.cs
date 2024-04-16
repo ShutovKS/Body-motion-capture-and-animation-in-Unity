@@ -9,10 +9,10 @@
 //Revised by N.Kobayashi 2014/06/24
 //           Y.Ebata
 //
-using UnityEngine;
-using System.Collections;
 
-namespace UnityChan
+using UnityEngine;
+
+namespace Unity_chan
 {
 	public class SpringManager : MonoBehaviour
 	{

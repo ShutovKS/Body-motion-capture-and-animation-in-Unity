@@ -5,11 +5,11 @@
 //
 //CS Version made by N.Kobayashi 2014/06/14
 //
-using UnityEngine;
-using System.Collections;
-using UnityEditor;
 
-namespace UnityChan
+using UnityEditor;
+using UnityEngine;
+
+namespace Unity_chan.Editor
 {
 	public class CreateLocatorHere
 	{

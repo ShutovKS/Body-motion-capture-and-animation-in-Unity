@@ -3,11 +3,11 @@
 //オート目パチスクリプト
 //2014/06/23 N.Kobayashi
 //
-using UnityEngine;
-using System.Collections;
-using System.Security;
 
-namespace UnityChan
+using System.Collections;
+using UnityEngine;
+
+namespace Unity_chan
 {
 	public class AutoBlink : MonoBehaviour
 	{

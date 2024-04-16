@@ -6,10 +6,10 @@
 //Rocket Jump : http://rocketjump.skr.jp/unity3d/109/
 //https://twitter.com/ricopin416
 //
-using UnityEngine;
-using System.Collections;
 
-namespace UnityChan
+using UnityEngine;
+
+namespace Unity_chan
 {
 	public class SpringCollider : MonoBehaviour
 	{

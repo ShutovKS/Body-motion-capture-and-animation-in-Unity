@@ -3,10 +3,10 @@
 // 
 // 2013/06/07 N.Kobyasahi
 //
-using UnityEngine;
-using System.Collections;
 
-namespace UnityChan
+using UnityEngine;
+
+namespace Unity_chan
 {
 	public class ThirdPersonCamera : MonoBehaviour
 	{
