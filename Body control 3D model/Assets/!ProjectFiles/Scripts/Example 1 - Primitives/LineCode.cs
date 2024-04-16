@@ -4,28 +4,25 @@ namespace Example_1___Primitives
 {
     public class LineCode : MonoBehaviour
     {
-        [SerializeField] private Transform origin;
-        [SerializeField] private Transform destination;
-        [SerializeField] private Material material;
-
+        private Transform _origin;
+        private Transform _destination;
         private LineRenderer _lineRenderer;
 
-        private void Start()
+        public void SetUp(Transform origin, Transform destination, Material material)
         {
-            if (!TryGetComponent(out _lineRenderer))
-            {
-                _lineRenderer = gameObject.AddComponent<LineRenderer>();
-            }
+            _origin = origin;
+            _destination = destination;
 
+            _lineRenderer = gameObject.AddComponent<LineRenderer>();
             _lineRenderer.materials[0] = material;
             _lineRenderer.startWidth = 0.1f;
             _lineRenderer.endWidth = 0.1f;
         }
 
-        private void Update()
+        public void Update()
         {
-            _lineRenderer.SetPosition(0, origin.position);
-            _lineRenderer.SetPosition(1, destination.position);
+            _lineRenderer.SetPosition(0, _origin.position);
+            _lineRenderer.SetPosition(1, _destination.position);
         }
     }
 }
