@@ -5,7 +5,7 @@ HOST = 'localhost'
 PORT = 50237
 
 
-def start_server(image_handler):
+def start_server(motion_capture):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((HOST, PORT))
     server_socket.listen(1)
@@ -16,8 +16,8 @@ def start_server(image_handler):
             client_socket, addr = server_socket.accept()
             print(f"Подключение от {addr}")
 
-            while True:  # Цикл для обработки и отправки данных
-                data = image_handler.process_frame()
+            while True:
+                data = motion_capture()
                 if data is not None:
                     client_socket.send(str(data).encode())
                     print(str(data))

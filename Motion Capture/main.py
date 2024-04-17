@@ -1,11 +1,13 @@
 # main.py
 import socket_server
-from image_handler import ImageHandler
+from image_handler import MotionCapture
 
 
 def main():
-    image_handler = ImageHandler()
-    socket_server.start_server(image_handler)
+    motion_capture = MotionCapture()
+    socket_server.start_server(motion_capture.webcam_capture)
+    # while True:
+    #     motion_capture.webcam_capture()
 
 
 if __name__ == "__main__":
