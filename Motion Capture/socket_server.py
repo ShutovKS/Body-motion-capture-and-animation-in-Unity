@@ -1,32 +1,52 @@
 # socket_server.py
 import socket
+import threading
+from event import Event
 
-HOST = 'localhost'
-PORT = 50237
 
+class MotionCaptureServer:
+    def __init__(self, host='localhost', port=50237):
+        self.host = host
+        self.port = port
+        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server_socket.bind((self.host, self.port))
+        self.server_socket.listen(1)
+        self.running = False
+        self.client_socket = None
+        self.connection_lost = Event()
 
-def start_server(motion_capture):
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind((HOST, PORT))
-    server_socket.listen(1)
-    print("Сервер запущен, ожидание подключения...")
+    def start_server(self):
+        self.running = True
+        threading.Thread(target=self.connected).start()
 
-    while True:
-        try:
-            client_socket, addr = server_socket.accept()
-            print(f"Подключение от {addr}")
+    def connected(self):
+        while self.running:
+            try:
+                self.client_socket, addr = self.server_socket.accept()
+                print(f"Подключение от {addr}")
+                self.send_data("Привет, клиент!")
+            except Exception as e:
+                print(f"Соединение прервано: {e}")
+                self.on_connection_lost()
+                break
 
-            while True:
-                data = motion_capture()
-                if data is not None:
-                    client_socket.send(str(data).encode())
-                    print(str(data))
-                else:
-                    print("Нет данных для отправки.")
+    def send_data(self, data):
+        if self.client_socket:
+            try:
+                self.client_socket.send(str(data).encode())
+                print(f"Данные отправлены: {data}")
+            except Exception as e:
+                print(f"Ошибка при отправке данных: {e}")
+                self.on_connection_lost()
 
-        except Exception as e:
-            print(f"Соединение прервано: {e}")
-            print("Попытка восстановить соединение...")
-            continue
+    def on_connection_lost(self):
+        print("Соединение разорвано.")
+        if self.client_socket:
+            self.client_socket.close()
+            self.client_socket = None
+        self.connection_lost.trigger()
 
-    server_socket.close()
+    def stop_server(self):
+        self.running = False
+        self.server_socket.close()
+        print("Сервер остановлен.")
