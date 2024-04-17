@@ -1,6 +1,6 @@
 # main.py
 import socket_server
-from image_handler import MotionCapture
+from motion_capture import MotionCapture
 
 
 def main():
