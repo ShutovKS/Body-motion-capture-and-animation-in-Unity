@@ -35,10 +35,17 @@ def main():
     motion_capture = MotionCapture()
 
     try:
-        while True:
-            pose_data = motion_capture.webcam_capture()
-            if pose_data is not None:
+        # для захвата из локального видео
+        while True:  # Зацикливание воспроизведения
+            pose_data_generator = motion_capture.video_file_capture('Hot Anime dance.mp4')
+            for pose_data in pose_data_generator:
                 server.send_data(pose_data)
+
+        # # для захвата из веб-камеры
+        # while True:
+        #     pose_data = motion_capture.webcam_capture()
+        #     if pose_data is not None:
+        #         server.send_data(pose_data)
     except KeyboardInterrupt:
         print("Программа остановлена пользователем.")
     finally:
