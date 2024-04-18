@@ -9,6 +9,11 @@ class MotionCapture:
         self.detector = PoseDetector()
         self.cam = cv2.VideoCapture(0)
 
+        import configparser
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        self.is_visible_current_handler_image_on_screen = config.get('Server', 'host')
+
     def webcam_capture(self):
         # Стриминг видео с вебкамеры
         success, img = self.cam.read()
@@ -21,28 +26,24 @@ class MotionCapture:
     def video_file_capture(self, video_path):
         # Обработка локального видео
         self.cam = cv2.VideoCapture(video_path)
-        success, img = self.cam.read()
-        if not success:
-            print(f"Не удалось прочитать кадр из файла {video_path}. Проверьте путь к файлу.")
-            return None
+        while True:
+            success, img = self.cam.read()
+            if not success:
+                self.cam.set(cv2.CAP_PROP_POS_FRAMES, 0)
+                continue
 
-        return self.__handler(img)
+            pose_data = self.__handler(img)
+            if pose_data is not None:
+                yield pose_data
+
+        self.cam.release()
+        cv2.destroyAllWindows()
 
     def image_file_capture(self, image_path):
         # Обработка локального изображения
         img = cv2.imread(image_path)
         if img is None:
             print(f"Не удалось прочитать изображение из файла {image_path}. Проверьте путь к файлу.")
-            return None
-
-        return self.__handler(img)
-
-    def video_stream_capture(self, video_url):
-        # Стриминг видео с URL
-        self.cam = cv2.VideoCapture(video_url)
-        success, img = self.cam.read()
-        if not success:
-            print(f"Не удалось прочитать кадр из потока {video_url}. Проверьте URL.")
             return None
 
         return self.__handler(img)
@@ -86,7 +87,8 @@ class MotionCapture:
                 for lm in lmList:
                     lm[1] = img.shape[0] - lm[1]
 
-            self.__print_current_image_on_screen()
+            if self.is_visible_current_handler_image_on_screen:
+                self.__print_current_image_on_screen()
 
             return lmList
         except Exception as e:
