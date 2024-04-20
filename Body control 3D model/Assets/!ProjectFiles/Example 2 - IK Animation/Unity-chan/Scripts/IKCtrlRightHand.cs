@@ -1,12 +1,8 @@
-﻿//
-//IKCtrlRightHand.cs
-//
-//Sample script for IK Control of Unity-Chan's right hand.
-//
-//2014/06/20 N.Kobayashi
-//
+﻿#region
 
 using UnityEngine;
+
+#endregion
 
 namespace Example_2___IK_Animation.Unity_chan
 {
@@ -26,7 +22,6 @@ namespace Example_2___IK_Animation.Unity_chan
 
 		void Update ()
 		{
-			//Kobayashi
 			if (mixWeight >= 1.0f)
 				mixWeight = 1.0f;
 			else if (mixWeight <= 0.0f)

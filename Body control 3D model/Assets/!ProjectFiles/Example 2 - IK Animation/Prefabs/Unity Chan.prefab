@@ -3124,7 +3124,7 @@ MonoBehaviour:
   YMultiplier: 400
   ZMultiplier: 1200
   server:
-    delayProcessing: 0
+    delayProcessing: 30
   bunches:
   - pointIndex: 25
     boneTransform: {fileID: 3049973937577574214}
@@ -3859,8 +3859,8 @@ MonoBehaviour:
         transform: {fileID: 0}
         weight: 0
     m_Offset: {x: 0, y: 0, z: 0}
-    m_MinLimit: 45
-    m_MaxLimit: 135
+    m_MinLimit: -180
+    m_MaxLimit: 180
     m_AimAxis: 2
     m_UpAxis: 1
     m_WorldUpType: 0

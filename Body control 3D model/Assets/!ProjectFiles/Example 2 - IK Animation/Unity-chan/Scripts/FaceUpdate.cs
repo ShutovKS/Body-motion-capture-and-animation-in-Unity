@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace Example_2___IK_Animation.Unity_chan
 {
@@ -40,9 +44,8 @@ namespace Example_2___IK_Animation.Unity_chan
 			}
 			anim.SetLayerWeight (1, current);
 		}
-	 
 
-		//アニメーションEvents側につける表情切り替え用イベントコール
+
 		public void OnCallChangeFace (string str)
 		{   
 			int ichecked = 0;
@@ -54,8 +57,7 @@ namespace Example_2___IK_Animation.Unity_chan
 					ichecked++;
 				} else {
 					//str指定が間違っている時にはデフォルトで
-					str = "default@unitychan";
-					ChangeFace (str);
+								ChangeFace (str);
 				}
 			} 
 		}

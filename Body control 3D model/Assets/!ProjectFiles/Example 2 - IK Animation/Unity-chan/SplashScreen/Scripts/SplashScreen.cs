@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace Example_2___IK_Animation.Unity_chan.SplashScreen.Scripts
 {
@@ -8,7 +12,6 @@ namespace Example_2___IK_Animation.Unity_chan.SplashScreen.Scripts
 
         void NextLevel ()
 		{
-			//SceneManager.LoadScene();
 		}
 	}
 }

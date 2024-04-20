@@ -1,13 +1,8 @@
-﻿//
-//RandomWind.cs for unity-chan!
-//
-//Original Script is here:
-//ricopin / RandomWind.cs
-//Rocket Jump : http://rocketjump.skr.jp/unity3d/109/
-//https://twitter.com/ricopin416
-//
+﻿#region
 
 using UnityEngine;
+
+#endregion
 
 namespace Example_2___IK_Animation.Unity_chan
 {
@@ -16,13 +11,11 @@ namespace Example_2___IK_Animation.Unity_chan
 		private SpringBone[] springBones;
 		public bool isWindActive = true;
 
-		// Use this for initialization
 		void Start ()
 		{
 			springBones = GetComponent<SpringManager> ().springBones;
 		}
 
-		// Update is called once per frame
 		void Update ()
 		{
 			Vector3 force = Vector3.zero;

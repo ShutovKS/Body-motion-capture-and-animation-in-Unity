@@ -1,5 +1,9 @@
+#region
+
 using System.IO;
 using UnityEngine;
+
+#endregion
 
 namespace Tools
 {

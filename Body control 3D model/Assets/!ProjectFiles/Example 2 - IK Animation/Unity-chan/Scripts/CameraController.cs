@@ -1,27 +1,11 @@
-﻿//CameraController.cs for UnityChan
-//Original Script is here:
-//TAK-EMI / CameraController.cs
-//https://gist.github.com/TAK-EMI/d67a13b6f73bed32075d
-//https://twitter.com/TAK_EMI
-//
-//Revised by N.Kobayashi 2014/5/15 
-//Change : To prevent rotation flips on XY plane, use Quaternion in cameraRotate()
-//Change : Add the instrustion window
-//Change : Add the operation for Mac
-//
-
+﻿#region
 
 using UnityEngine;
 
+#endregion
+
 namespace Example_2___IK_Animation.Unity_chan
 {
-	enum MouseButtonDown
-	{
-		MBD_LEFT = 0,
-		MBD_RIGHT,
-		MBD_MIDDLE,
-	};
-
 	public class CameraController : MonoBehaviour
 	{
 		[SerializeField]
@@ -62,7 +46,6 @@ namespace Example_2___IK_Animation.Unity_chan
 			return;
 		}
 
-		//Show Instrustion Window
 		void OnGUI()
 		{
 			if(showInstWindow){
@@ -96,27 +79,22 @@ namespace Example_2___IK_Animation.Unity_chan
 
 			if(Input.GetMouseButton((int)MouseButtonDown.MBD_LEFT))
 			{
-				//Operation for Mac : "Left Alt + Left Command + LMB Drag" is Track
 				if(Input.GetKey(KeyCode.LeftAlt) && Input.GetKey(KeyCode.LeftCommand))
 				{
 					if (diff.magnitude > Vector3.kEpsilon)
 						this.cameraTranslate(-diff / 100.0f);
 				}
-				//Operation for Mac : "Left Alt + LMB Drag" is Tumble
 				else if (Input.GetKey(KeyCode.LeftAlt))
 				{
 					if (diff.magnitude > Vector3.kEpsilon)
 						this.cameraRotate(new Vector3(diff.y, diff.x, 0.0f));
 				}
-				//Only "LMB Drag" is no action.
 			}
-			//Track
 			else if (Input.GetMouseButton((int)MouseButtonDown.MBD_MIDDLE))
 			{
 				if (diff.magnitude > Vector3.kEpsilon)
 					this.cameraTranslate(-diff / 100.0f);
 			}
-			//Tumble
 			else if (Input.GetMouseButton((int)MouseButtonDown.MBD_RIGHT))
 			{
 				if (diff.magnitude > Vector3.kEpsilon)
@@ -128,7 +106,6 @@ namespace Example_2___IK_Animation.Unity_chan
 			return;
 		}
 
-		//Dolly
 		public void mouseWheelEvent(float delta)
 		{
 			Vector3 focusToPosition = this.transform.position - this.focus;
@@ -157,13 +134,11 @@ namespace Example_2___IK_Animation.Unity_chan
 
 		public void cameraRotate(Vector3 eulerAngle)
 		{
-			//Use Quaternion to prevent rotation flips on XY plane
 			Quaternion q = Quaternion.identity;
  
 			Transform focusTrans = this.focusObj.transform;
 			focusTrans.localEulerAngles = focusTrans.localEulerAngles + eulerAngle;
 
-			//Change this.transform.LookAt(this.focus) to q.SetLookRotation(this.focus)
 			q.SetLookRotation (this.focus) ;
 
 			return;
