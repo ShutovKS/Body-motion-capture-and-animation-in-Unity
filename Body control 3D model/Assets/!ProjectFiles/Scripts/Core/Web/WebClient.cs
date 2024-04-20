@@ -1,3 +1,5 @@
+#region
+
 using System;
 using System.Net.Sockets;
 using System.Text;
@@ -6,6 +8,8 @@ using System.Threading.Tasks;
 using Data;
 using Tools;
 using UnityEngine;
+
+#endregion
 
 namespace Web
 {
