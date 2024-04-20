@@ -14,11 +14,9 @@ namespace Example_2___IK_Animation.Scripts
         [SerializeField] private float YMultiplier = 1000f;
         [SerializeField] private float ZMultiplier = 3000f;
 
-        [Space, SerializeField] private List<LineCodeData> lineCodes;
         [Space, SerializeField] private WebClient server = new();
 
-        [SerializeField] private WebClient webClient;
-        [SerializeField] private List<Bunch> bunches;
+        [Space, SerializeField] private List<Bunch> bunches;
         [SerializeField] private Transform parentTransform;
 
         private CancellationTokenSource _cancellationTokenReconnects;
