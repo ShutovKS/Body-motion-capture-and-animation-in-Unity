@@ -41,8 +41,8 @@ namespace Example_2___IK_Animation.Scripts
             }
 
             parentTransform.position = new Vector3(
-                (server.IntArray[24 * 3 + 0] + server.IntArray[25 * 3 + 0]) * 0.5f / XMultiplier,
-                (server.IntArray[28 * 3 + 1]) / YMultiplier,
+                (server.IntArray[24 * 3 + 0] + server.IntArray[23 * 3 + 0]) * 0.5f / XMultiplier,
+                (server.IntArray[28 * 3 + 1] + server.IntArray[27 * 3 + 1]) * 0.5f / YMultiplier,
                 (server.IntArray[24 * 3 + 2]) / ZMultiplier);
 
             foreach (var bunch in bunches)
