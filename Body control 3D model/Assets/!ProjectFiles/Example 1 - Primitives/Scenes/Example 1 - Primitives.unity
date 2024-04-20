@@ -330,7 +330,7 @@ MonoBehaviour:
   - <BodyDotOriginNumber>k__BackingField: 29
     <BodyDotDestinationNumber>k__BackingField: 31
   server:
-    delayProcessing: 0
+    delayProcessing: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

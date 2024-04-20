@@ -316,10 +316,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 460434513287258025, guid: c44c93b1cd9652c4c82f01fc4195c0d4, type: 3}
-      propertyPath: server.delayProcessing
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2906807294161853417, guid: c44c93b1cd9652c4c82f01fc4195c0d4, type: 3}
       propertyPath: m_Name
       value: Unity Chan

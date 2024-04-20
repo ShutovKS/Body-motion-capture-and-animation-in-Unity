@@ -3124,7 +3124,7 @@ MonoBehaviour:
   YMultiplier: 400
   ZMultiplier: 1200
   server:
-    delayProcessing: 30
+    delayProcessing: 20
   bunches:
   - pointIndex: 25
     boneTransform: {fileID: 3049973937577574214}
