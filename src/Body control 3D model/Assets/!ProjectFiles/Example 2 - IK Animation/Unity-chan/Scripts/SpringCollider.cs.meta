@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: fcb73b690c023734fb267911061a15c6
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18705
+  packageName: '"Unity-Chan!" Model'
+  packageVersion: 1.2.2
+  assetPath: Assets/unity-chan!/Unity-chan! Model/Scripts/SpringCollider.cs
+  uploadId: 374231

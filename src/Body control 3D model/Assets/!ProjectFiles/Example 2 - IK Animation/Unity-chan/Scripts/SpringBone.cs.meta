@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 37b7c58dc2d739b4c90fe59f6875debf
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18705
+  packageName: '"Unity-Chan!" Model'
+  packageVersion: 1.2.2
+  assetPath: Assets/unity-chan!/Unity-chan! Model/Scripts/SpringBone.cs
+  uploadId: 374231
