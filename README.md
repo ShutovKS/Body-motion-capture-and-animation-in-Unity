@@ -1,4 +1,4 @@
-# Motion Capture and Animation in Unity
+# Body motion capture and animation in Unity
 
 Eng | [Rus](resources/readme_localisation/readme_ru.md)
 
