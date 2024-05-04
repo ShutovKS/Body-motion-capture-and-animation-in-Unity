@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 12ec17992da8868439a50d4b342b7cfd
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18705
+  packageName: '"Unity-Chan!" Model'
+  packageVersion: 1.2.2
+  assetPath: Assets/unity-chan!/Unity-chan! Model/Editor/CreateLocatorHere.cs
+  uploadId: 374231

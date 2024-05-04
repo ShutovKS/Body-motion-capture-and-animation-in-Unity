@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c6893d99d338240cd834967aa6448379
+labels:
+- UnityChan
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18705
+  packageName: '"Unity-Chan!" Model'
+  packageVersion: 1.2.2
+  assetPath: Assets/unity-chan!/Unity-chan! Model/Art/Animations/FaceAnimation/face
+    only mask.mask
+  uploadId: 374231

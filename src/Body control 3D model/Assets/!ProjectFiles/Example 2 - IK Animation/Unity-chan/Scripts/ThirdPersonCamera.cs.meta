@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bd9604897707c4879978b864a8be4d39
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18705
+  packageName: '"Unity-Chan!" Model'
+  packageVersion: 1.2.2
+  assetPath: Assets/unity-chan!/Unity-chan! Model/Scripts/ThirdPersonCamera.cs
+  uploadId: 374231

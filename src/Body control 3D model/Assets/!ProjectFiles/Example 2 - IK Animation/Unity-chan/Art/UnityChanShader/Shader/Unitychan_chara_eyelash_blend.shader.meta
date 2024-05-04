@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9627902a73805264c818754ecb22c8f9
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18705
+  packageName: '"Unity-Chan!" Model'
+  packageVersion: 1.2.2
+  assetPath: Assets/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Shader/Unitychan_chara_eyelash_blend.shader
+  uploadId: 374231
